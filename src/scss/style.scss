@@ -1,0 +1,102 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    resize: none;
+    outline: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.wrapper {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        width: 450px;
+        height: 450px;
+        border-radius: 50%;
+        z-index: -1;
+    }
+    &::after {
+        top: 30%;
+        left: 10%;
+        background: linear-gradient(45deg, #68DCAE, #EE5CC0);
+    }
+    &::before {
+        top: 50%;
+        right: 10%;
+        background: linear-gradient(45deg, #00FF00, #A7F432);
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: inherit;
+    }
+    &__card {
+        width: 600px;
+        height: 300px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        background: rgba(250, 250, 250, 0.5);
+        backdrop-filter: blur(19.028px);
+        padding: 2%;
+        color: #fff;
+        justify-content: space-between;
+        &-heading {
+            font-size: 2em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        &-main {
+            padding: 3% 0;
+        }
+        &-list {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            &-item {
+                font-size: 20px;
+            }
+        }
+        &-info {
+            display: flex;
+            justify-content: space-between;
+        }
+        &-block {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                max-width: 200px;
+            }
+            &-heading {
+                font-size: 1.5em;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
